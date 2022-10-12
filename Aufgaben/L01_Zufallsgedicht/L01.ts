@@ -6,9 +6,6 @@
  Quellen: <Paula Jordans, Julia Befus, Pia Giovannelli >
 */
 
-
-
-
 //Programmstruktur implementieren//
 
 namespace Zufallsgedicht {
