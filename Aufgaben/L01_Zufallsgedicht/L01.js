@@ -1,3 +1,10 @@
+/*
+ Aufgabe:<01, Zufallsgedicht>
+ Name: <Aanya Khetarpal>
+ Matrikel: <2711441>
+ Datum: <12.10.2022>
+ Quellen: <Paula Jordans, Julia Befus, Pia Giovannelli >
+*/
 //Programmstruktur implementieren//
 var Zufallsgedicht;
 (function (Zufallsgedicht) {
