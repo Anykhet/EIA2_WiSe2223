@@ -35,9 +35,9 @@ for (let index: number=6; index >= 1; index--) {
 //getVerse Funktion
 
 function getVerse(_s: string[], _p: string[], _o: string[]): string {
-    let randoms: number = Math.floor(Math.random() * _s.length);
-    let randomp: number = Math.floor(Math.random() * _p.length);
-    let randomo: number = Math.floor(Math.random() * _o.length);
+    let randoms: number = Math.floor(Math.random());
+    let randomp: number = Math.floor(Math.random());
+    let randomo: number = Math.floor(Math.random());
 
     let verse: string = _s[randoms] + " " + _p[randomp] + " " + _o[randomo] + ".";
 
