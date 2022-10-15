@@ -3,7 +3,7 @@
  Name: <Aanya Khetarpal>
  Matrikel: <2711441>
  Datum: <12.10.2022>
- Quellen: <Paula Jordans, Julia Befus, Pia Giovannelli >
+ Quellen: <Paula Jordans, Julia Befus, Pia Giovannelli, Havva Sümeyye Kilic>
 */
 
 //Programmstruktur implementieren//
