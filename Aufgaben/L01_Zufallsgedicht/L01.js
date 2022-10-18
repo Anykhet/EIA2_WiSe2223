@@ -3,7 +3,7 @@
  Name: <Aanya Khetarpal>
  Matrikel: <2711441>
  Datum: <12.10.2022>
- Quellen: <Paula Jordans, Julia Befus, Pia Giovannelli >
+ Quellen: <Paula Jordans, Julia Befus, Pia Giovannelli, Havva Sümeyye Kilic>
 */
 //Programmstruktur implementieren//
 var Zufallsgedicht;
@@ -25,9 +25,9 @@ var Zufallsgedicht;
     }
     //getVerse Funktion
     function getVerse(_s, _p, _o) {
-        let randoms = Math.floor(Math.random() * _s.length);
-        let randomp = Math.floor(Math.random() * _p.length);
-        let randomo = Math.floor(Math.random() * _o.length);
+        let randoms = Math.floor(Math.random());
+        let randomp = Math.floor(Math.random());
+        let randomo = Math.floor(Math.random());
         let verse = _s[randoms] + " " + _p[randomp] + " " + _o[randomo] + ".";
         _s.splice(randoms, 1);
         _p.splice(randomp, 1);
