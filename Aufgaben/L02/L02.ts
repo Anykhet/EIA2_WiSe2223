@@ -1,18 +1,29 @@
+/*
+ Aufgabe:<L02, Event Inspector>
+ Name: <Aanya Khetarpal>
+ Matrikel: <2711441>
+ Datum: <20.10.2022>
+ Quellen: <Paula Jordans, Julia Befus, Pia Giovannelli, Havva Sümeyye Kilic>
+*/
+
+
+
 namespace L02_EventInspector {
 
     window.addEventListener("load", handleLoad);
 
-
+//function handleload
     function handleLoad(_event: Event): void {
         let body: HTMLElement = <HTMLElement>document.body;
         let div0: HTMLDivElement = <HTMLDivElement>document.querySelector("#div0");
         let div1: HTMLDivElement = <HTMLDivElement>document.querySelector("#div1");
         let button: HTMLButtonElement = <HTMLButtonElement>document.querySelector("button");
 
+//Event Listener für Cursor
         document.addEventListener("mousemove", setInfoBox);
 
-        //Eventlistener an document, body und die divs gepackt
-        document.addEventListener("click", logInfo);
+//Divs und body event listener       
+        document.addEventListener("click", logInfo);                      
         document.addEventListener("keyup", logInfo);
         body.addEventListener("click", logInfo);
         body.addEventListener("keyup", logInfo);
@@ -21,9 +32,13 @@ namespace L02_EventInspector {
         div1.addEventListener("click", logInfo);
         div1.addEventListener("keyup", logInfo);
 
+//Button event listener
+
         button.addEventListener("click", customEvent);
-        document.addEventListener("petTheCat", logInfo);
+        document.addEventListener("cuddledog", logInfo);
     }
+
+//Cursor zeigt Koordinaten
 
     function setInfoBox(_event: MouseEvent): void {
         let x: number = _event.clientX;
@@ -45,10 +60,12 @@ namespace L02_EventInspector {
         console.log(_event);
     }
 
+//Custom Event Aufgabe 
+
     function customEvent(_event: Event): void {
         let button: HTMLButtonElement = <HTMLButtonElement>_event.target;
-        // bubbles sorgt dafür, dass das Customevent im Dom Tree aufsteigt
-        let newEvent: CustomEvent = new CustomEvent("petTheCat", { bubbles: true });
+       
+        let newEvent: CustomEvent = new CustomEvent("cuddledog", { bubbles: true }); // Buttons = custom Event in DOM
 
         button.dispatchEvent(newEvent);
     }
