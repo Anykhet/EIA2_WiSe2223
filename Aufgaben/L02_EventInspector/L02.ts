@@ -2,7 +2,7 @@
  Aufgabe:<L02, Event Inspector>
  Name: <Aanya Khetarpal>
  Matrikel: <2711441>
- Datum: <20.10.2022>
+ Datum: <21.10.2022>
  Quellen: <Paula Jordans, Julia Befus, Pia Giovannelli, Havva Sümeyye Kilic>
 */
 
@@ -65,7 +65,7 @@ namespace L02_EventInspector {
     function customEvent(_event: Event): void {
         let button: HTMLButtonElement = <HTMLButtonElement>_event.target;
        
-        let newEvent: CustomEvent = new CustomEvent("cuddledog", { bubbles: true }); // Buttons = custom Event in DOM
+        let newEvent: CustomEvent = new CustomEvent("cuddledog", { bubbles: true }); // Buttons = Custom Event in DOM
 
         button.dispatchEvent(newEvent);
     }

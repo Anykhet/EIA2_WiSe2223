@@ -2,7 +2,7 @@
  Aufgabe:<L02, Event Inspector>
  Name: <Aanya Khetarpal>
  Matrikel: <2711441>
- Datum: <20.10.2022>
+ Datum: <21.10.2022>
  Quellen: <Paula Jordans, Julia Befus, Pia Giovannelli, Havva Sümeyye Kilic>
 */
 var L02_EventInspector;
@@ -49,7 +49,7 @@ var L02_EventInspector;
     //Custom Event Aufgabe 
     function customEvent(_event) {
         let button = _event.target;
-        let newEvent = new CustomEvent("cuddledog", { bubbles: true }); // Buttons = custom Event in DOM
+        let newEvent = new CustomEvent("cuddledog", { bubbles: true }); // Buttons = Custom Event in DOM
         button.dispatchEvent(newEvent);
     }
 })(L02_EventInspector || (L02_EventInspector = {}));
