@@ -1,3 +1,10 @@
+/*
+ Aufgabe:<L03, Einkaufsliste>
+ Name: <Aanya Khetarpal>
+ Matrikel: <2711441>
+ Datum: <28.10.2022>
+ Quellen: <Paula Jordans, Julia Befus, Pia Giovannelli, Havva Sümeyye Kilic>
+*/
 window.addEventListener("load", function () {
     const input = document.getElementById("toDo");
     const wrapper = document.getElementById("todoWrapper");
@@ -17,6 +24,9 @@ window.addEventListener("load", function () {
     function createToDo() {
         todoCount++;
         updateCounter();
+        console.log("new Item");
+        console.log("amount");
+        console.log("comment");
         const todoItem = document.createElement("div");
         const checkbox = document.createElement("input");
         const label = document.createElement("label");
@@ -37,6 +47,7 @@ window.addEventListener("load", function () {
     }
     function deleteItem(item) {
         wrapper.removeChild(item);
+        console.log("delete Item");
         todoCount--;
         updateCounter();
     }
