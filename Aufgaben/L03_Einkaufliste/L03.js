@@ -16,7 +16,7 @@ window.addEventListener("load", function () {
         }
     });
     function updateCounter() {
-        document.querySelector("#counterToDos").innerHTML = String(todoCount);
+        document.querySelector("#counterItem").innerHTML = String(todoCount);
     }
     function clearInput() {
         input.value = "";

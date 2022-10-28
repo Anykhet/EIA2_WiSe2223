@@ -22,7 +22,7 @@ window.addEventListener("load", function (): void {
 
 
     function updateCounter(): void {
-        document.querySelector("#counterToDos").innerHTML = String(todoCount);
+        document.querySelector("#counterItem").innerHTML = String(todoCount);
     }
 
     function clearInput(): void {
