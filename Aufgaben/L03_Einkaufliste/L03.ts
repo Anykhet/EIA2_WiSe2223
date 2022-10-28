@@ -5,70 +5,26 @@
  Datum: <28.10.2022>
  Quellen: <Paula Jordans, Julia Befus, Pia Giovannelli, Havva Sümeyye Kilic>
 */
+window.addEventListener("load", handleLoad);
 
-window.addEventListener("load", function (): void {
-    const input: HTMLInputElement = (document.getElementById("toDo") as HTMLInputElement);
-    const wrapper: HTMLElement = document.getElementById("todoWrapper");
+function handleLoad(): void {
 
-    let todoCount: number = 0;
+    document.querySelector("#trash").addEventListener("click", trash);
+    document.querySelector("#check").addEventListener("click", check);
+    document.querySelector("#newitem").addEventListener("click",item)
+}
 
+//Funktion fürs Löschen eines Items (durch Mülleimer)
+function trash(): void{
+    console.log("Item wird gelöscht von der Liste")
+}
 
-    input.addEventListener("keydown", function (event: KeyboardEvent): void {
-        if (event.key === "Enter") {
-            createToDo();
-            clearInput();
-        }
-    });
+//Funktion fürs abhacken eines Items (durch checkbox)
+function check():void{
+    console.log("Item wird abgehackt/wurde gekauft")
+}
 
-
-    function updateCounter(): void {
-        document.querySelector("#counterItem").innerHTML = String(todoCount);
-    }
-
-    function clearInput(): void {
-        input.value = "";
-    }
-
-    function createToDo(): void {
-        todoCount++;
-        updateCounter();
-        console.log("new Item");
-        console.log("amount");
-        console.log("comment");
-
-        const todoItem: HTMLDivElement = document.createElement("div");
-        const checkbox: HTMLInputElement = document.createElement("input");
-        const label: HTMLElement = document.createElement("label");
-        const trashButton: HTMLElement = document.createElement("i");
-
-        todoItem.className = "todoItem";
-        checkbox.type = "checkbox";
-        checkbox.className = "checkBox";
-        label.innerHTML = input.value;
-        label.className = "divLabel";
-        trashButton.className = " fas fa-trash-alt";
-
-
-        wrapper.appendChild(todoItem);
-        todoItem.appendChild(checkbox);
-        todoItem.appendChild(label);
-        todoItem.appendChild(trashButton);
-
-
-        trashButton.addEventListener("click", function (): void {
-            deleteItem(todoItem);
-        });
-
-    }
-
-    function deleteItem(item: HTMLElement): void {
-
-        wrapper.removeChild(item);
-        console.log("delete Item")
-
-
-        todoCount--;
-        updateCounter();
-    }
-
-});
+//Funktion für das hinzufügen eines Items (durch Plus)
+function item():void{
+    console.log("Neues Item wird hinzugefügt")
+}

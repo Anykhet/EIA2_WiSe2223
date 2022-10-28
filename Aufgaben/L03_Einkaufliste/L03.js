@@ -5,51 +5,22 @@
  Datum: <28.10.2022>
  Quellen: <Paula Jordans, Julia Befus, Pia Giovannelli, Havva Sümeyye Kilic>
 */
-window.addEventListener("load", function () {
-    const input = document.getElementById("toDo");
-    const wrapper = document.getElementById("todoWrapper");
-    let todoCount = 0;
-    input.addEventListener("keydown", function (event) {
-        if (event.key === "Enter") {
-            createToDo();
-            clearInput();
-        }
-    });
-    function updateCounter() {
-        document.querySelector("#counterItem").innerHTML = String(todoCount);
-    }
-    function clearInput() {
-        input.value = "";
-    }
-    function createToDo() {
-        todoCount++;
-        updateCounter();
-        console.log("new Item");
-        console.log("amount");
-        console.log("comment");
-        const todoItem = document.createElement("div");
-        const checkbox = document.createElement("input");
-        const label = document.createElement("label");
-        const trashButton = document.createElement("i");
-        todoItem.className = "todoItem";
-        checkbox.type = "checkbox";
-        checkbox.className = "checkBox";
-        label.innerHTML = input.value;
-        label.className = "divLabel";
-        trashButton.className = " fas fa-trash-alt";
-        wrapper.appendChild(todoItem);
-        todoItem.appendChild(checkbox);
-        todoItem.appendChild(label);
-        todoItem.appendChild(trashButton);
-        trashButton.addEventListener("click", function () {
-            deleteItem(todoItem);
-        });
-    }
-    function deleteItem(item) {
-        wrapper.removeChild(item);
-        console.log("delete Item");
-        todoCount--;
-        updateCounter();
-    }
-});
+window.addEventListener("load", handleLoad);
+function handleLoad() {
+    document.querySelector("#trash").addEventListener("click", trash);
+    document.querySelector("#check").addEventListener("click", check);
+    document.querySelector("#newitem").addEventListener("click", item);
+}
+//Funktion fürs Löschen eines Items (durch Mülleimer)
+function trash() {
+    console.log("Item wird gelöscht von der Liste");
+}
+//Funktion fürs abhacken eines Items (durch checkbox)
+function check() {
+    console.log("Item wird abgehackt/wurde gekauft");
+}
+//Funktion für das hinzufügen eines Items (durch Plus)
+function item() {
+    console.log("Neues Item wird hinzugefügt");
+}
 //# sourceMappingURL=L03.js.map
