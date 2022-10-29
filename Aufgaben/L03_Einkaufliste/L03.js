@@ -2,7 +2,7 @@
  Aufgabe:<L03, Einkaufsliste>
  Name: <Aanya Khetarpal>
  Matrikel: <2711441>
- Datum: <28.10.2022>
+ Datum: <29.10.2022>
  Quellen: <Paula Jordans, Julia Befus, Pia Giovannelli, Havva Sümeyye Kilic>
 */
 window.addEventListener("load", handleLoad);
@@ -10,6 +10,7 @@ function handleLoad() {
     document.querySelector("#trash").addEventListener("click", trash);
     document.querySelector("#check").addEventListener("click", check);
     document.querySelector("#newitem").addEventListener("click", item);
+    document.querySelector("#edit").addEventListener("click", edit);
 }
 //Funktion fürs Löschen eines Items (durch Mülleimer)
 function trash() {
@@ -22,5 +23,9 @@ function check() {
 //Funktion für das hinzufügen eines Items (durch Plus)
 function item() {
     console.log("Neues Item wird hinzugefügt");
+}
+//Funktion für das bearbeiten eines Items (durch Stift)
+function edit() {
+    console.log("Item kann bearbeitet werden");
 }
 //# sourceMappingURL=L03.js.map
