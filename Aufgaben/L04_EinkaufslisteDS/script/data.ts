@@ -16,9 +16,9 @@ namespace shoppinglistA04 {
     export let savedInputs: Input[] = [
 
         {
-            savedItem: "noodles",
+            savedItem: "Nutella Biscuits",
             savedAmount: 4,
-            savedComment: "packages",
+            savedComment: "grosse liebe",
             savedDate: "03.11.2022",
             savedPurchase: false
           
