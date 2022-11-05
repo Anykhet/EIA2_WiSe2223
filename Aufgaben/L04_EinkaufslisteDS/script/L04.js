@@ -3,7 +3,7 @@
  Name: <Aanya Khetarpal>
  Matrikel: <2711441>
  Datum: <05.11.2022>
- Quellen: <Bastian Aberle,Paula Jordans, Julia Befus, Pia Giovannelli, Havva Sümeyye Kilic>
+ Quellen: <Bastian Aberle, Paula Jordans, Julia Befus, Pia Giovannelli, Havva Sümeyye Kilic>
 */
 var shoppinglistA04;
 (function (shoppinglistA04) {

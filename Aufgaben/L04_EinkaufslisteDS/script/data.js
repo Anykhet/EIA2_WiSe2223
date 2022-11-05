@@ -2,9 +2,9 @@ var shoppinglistA04;
 (function (shoppinglistA04) {
     shoppinglistA04.savedInputs = [
         {
-            savedItem: "noodles",
+            savedItem: "Nutella Biscuits",
             savedAmount: 4,
-            savedComment: "packages",
+            savedComment: "grosse liebe",
             savedDate: "03.11.2022",
             savedPurchase: false
         },
