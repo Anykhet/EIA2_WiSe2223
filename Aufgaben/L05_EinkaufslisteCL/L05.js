@@ -8,6 +8,8 @@
 var shoppinglistA05;
 (function (shoppinglistA05) {
     window.addEventListener("load", handleLoad);
+    //Aufruf loadData
+    //Liste lädt
     async function handleLoad() {
         let button = document.querySelector("button[type=button]");
         let response = await fetch("data.json");
@@ -17,10 +19,12 @@ var shoppinglistA05;
         clearInputs();
         loadData(data);
     }
+    //Button_Handler (Managment)
     function handleButton() {
         loadInput();
         sendData();
     }
+    //Austausch client
     async function sendData() {
         let formData = new FormData(document.forms[0]);
         let query = new URLSearchParams(formData);

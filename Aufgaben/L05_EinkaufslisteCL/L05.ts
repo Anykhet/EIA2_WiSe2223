@@ -11,6 +11,7 @@ namespace shoppinglistA05 {
     window.addEventListener("load", handleLoad);
 
     
+    //Interface für JSON
     export interface Input {
         item: string;
         amount: number;
@@ -19,7 +20,8 @@ namespace shoppinglistA05 {
         purchase: string;
     }
 
-   
+   //Aufruf loadData
+   //Liste lädt
     async function handleLoad(): Promise<void> {
         let button: HTMLButtonElement = <HTMLButtonElement>document.querySelector("button[type=button]");
         let response: Response = await fetch("data.json");
@@ -30,13 +32,13 @@ namespace shoppinglistA05 {
         loadData(data);
     }
 
-    
+    //Button_Handler (Managment)
     function handleButton(): void {
         loadInput();
         sendData();
     }
 
-    
+    //Austausch client
     async function sendData(): Promise<void> {
         let formData: FormData = new FormData(document.forms[0]);
         let query: URLSearchParams = new URLSearchParams(<any>formData);
@@ -44,7 +46,7 @@ namespace shoppinglistA05 {
         alert("Data sent");
     }
 
-    
+   
     function loadData(data: Input[]): void {
         for (let index: number = 0; index < data.length; index++) {
             let item: string = data[index].item;
