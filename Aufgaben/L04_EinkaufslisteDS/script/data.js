@@ -3,7 +3,7 @@ var shoppinglistA04;
     shoppinglistA04.savedInputs = [
         {
             savedItem: "Nutella Biscuits",
-            savedAmount: 3,
+            savedAmount: 4,
             savedComment: "grosse liebe",
             savedDate: "03.11.2022",
             savedPurchase: false
