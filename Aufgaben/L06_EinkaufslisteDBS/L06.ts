@@ -286,3 +286,6 @@ namespace a06_shoppinglist {
     }
 
 }
+
+
+//funktioniert noch nicht alles zu 100%

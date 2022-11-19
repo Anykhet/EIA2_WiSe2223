@@ -209,4 +209,5 @@ var a06_shoppinglist;
         deletelistelement(nextelement, counter);
     }
 })(a06_shoppinglist || (a06_shoppinglist = {}));
+//funktioniert noch nicht alles zu 100%
 //# sourceMappingURL=L06.js.map
