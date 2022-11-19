@@ -6,7 +6,7 @@
  Quellen: <Bastian Aberle, Lisa Blindenhöfer, Cindy Nguyen, Pia Giovannelli>
 */
 
-namespace a06_shoppinglist {
+namespace L06_shoppinglist {
 
     window.addEventListener("load", handleload);
 
