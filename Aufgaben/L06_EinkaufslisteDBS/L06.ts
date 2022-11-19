@@ -2,8 +2,8 @@
  Aufgabe:<L06, Einkaufsliste DatabaseServer>
  Name: <Aanya Khetarpal>
  Matrikel: <2711441>
- Datum: <12.11.2022>
- Quellen: <Bastian Aberle, Lisa Blindenhöfer, Cindy Ngyuen
+ Datum: <19.11.2022>
+ Quellen: <Bastian Aberle, Lisa Blindenhöfer, Cindy Nguyen, Pia Giovannelli>
 */
 
 namespace a06_shoppinglist {
@@ -38,14 +38,14 @@ namespace a06_shoppinglist {
 
     }
 
-    //ruft Funktionen für Click auf Button auf
+    // Click BUtton Funktion
     function handleaddbutton(): void {
         submitbutton();
         addList();
 
     }
 
-    //sendet
+    
     async function submitbutton(): Promise<void> {
         let formData: FormData = new FormData(document.forms[0]);
         let json: FormDataJSON = {};
@@ -69,7 +69,7 @@ namespace a06_shoppinglist {
 
     }
 
-    //lädt data aus data.ts
+    //Data aus data.ts
     function loaddata(inputs: Item): void {
 
         console.log("load data");
@@ -82,14 +82,14 @@ namespace a06_shoppinglist {
 
 
         for (let counter of newlist) {
-            //console.log("test");
+            
             console.log(inputs.data[counter].Product);
 
             let amount: number = inputs.data[counter].Amount;
             let product: string = inputs.data[counter].Product;
             let comment: string = inputs.data[counter].Comment;
 
-            //buy next time 
+            //Box für "buy next time"
             let element: HTMLInputElement = <HTMLInputElement>document.getElementById("checkboxdate");
             let nextpurchase: string;
             if (element.checked) {
@@ -107,19 +107,19 @@ namespace a06_shoppinglist {
             var getelement: HTMLElement = document.querySelector("#alloutputs");
             getelement.appendChild(nextelement);
 
-            //Neue Checkbox 
+            //Checkbox hinzugefügt 
             let listcheck: HTMLInputElement = document.createElement("input");
             listcheck.type = "checkbox";
             listcheck.name = "Checkbox1";
             listcheck.className = "checkbox1";
             nextelement.appendChild(listcheck);
 
-            //neuer Trash 
+            //Trash hinzugefügt 
             let listtrash: HTMLDivElement = document.createElement("div");
             listtrash.innerHTML = "<i id='trash' class='fa-solid fa-trash-can'></i>";
             nextelement.appendChild(listtrash);
 
-            //neues edit 
+            //Edit Icon hinzugefügt
             let listedit: HTMLDivElement = document.createElement("div");
             listedit.className = "edit";
             listedit.innerHTML = "<i id ='edit' class='fa-regular fa-pen-to-square'></i>";
@@ -139,7 +139,7 @@ namespace a06_shoppinglist {
         }
     }
 
-    //fügt Eingegebenes der Liste hinzu
+   // Funktion fürs einfügen neuer Einträge in die Liste
     function addList(): void {
 
         //console.log("add inputs");
@@ -151,7 +151,7 @@ namespace a06_shoppinglist {
 
         let dateoftoday: Date = new Date();
 
-        //buy next time 
+        //Box für "buy next time"
         let element: HTMLInputElement = <HTMLInputElement>document.getElementById("checkboxdate");
         let nextpurchase: string;
         if (element.checked) {
@@ -160,14 +160,14 @@ namespace a06_shoppinglist {
             nextpurchase = " ";
         }
 
-        //gibt die einzelnen inputs aus
+        //Einzelne Inputs
         let nextelement: HTMLDivElement = document.createElement("div");
         nextelement.classList.add("inputData");
         nextelement.innerHTML = dateoftoday.toLocaleDateString() + "   " + product + "   " + amount + "   " + comment + "  " + nextpurchase;
         var getelement: HTMLElement = document.querySelector("#alloutputs");
         getelement.appendChild(nextelement);
 
-        //Neue Checkbox 
+        //Checkbox hinzugefügt 
         let listcheck: HTMLInputElement = document.createElement("input");
         listcheck.type = "checkbox";
         listcheck.name = "Checkbox1";
@@ -175,12 +175,12 @@ namespace a06_shoppinglist {
         //listcheck.checked = "checked";
         nextelement.appendChild(listcheck);
 
-        //neuer Trash 
+        //Trash hinzugefügt 
         let listtrash: HTMLDivElement = document.createElement("div");
         listtrash.innerHTML = "<i id='trash' class='fa-solid fa-trash-can'></i>";
         nextelement.appendChild(listtrash);
 
-        //neues edit 
+        // Edit Icon hinzugefügt
         let listedit: HTMLDivElement = document.createElement("div");
         listedit.className = "edit";
         listedit.innerHTML = "<i id ='edit' class='fa-regular fa-pen-to-square'></i>";
@@ -195,10 +195,10 @@ namespace a06_shoppinglist {
         });
 
         listcheck.addEventListener("click", function (): void {
-            daterefresh(nextelement, product, amount, comment, nextpurchase, counter);
+            daterefresh(nextelement, product, amount, comment, nextpurchase, counter); //keine Ahnung wieso rot -> funktioniert trotzdem 
         });
 
-        //alle inputs leeren
+        //Inputs werden ausgeleert
         let inputproductname: HTMLInputElement = document.getElementById("inputproduct") as HTMLInputElement;
         inputproductname.value = "";
         let inputamount: HTMLInputElement = document.getElementById("amount") as HTMLInputElement;
@@ -216,19 +216,19 @@ namespace a06_shoppinglist {
         let dateoftodaynew: Date = new Date();
         nextelement.innerHTML = dateoftodaynew.toLocaleDateString() + "  " + product + "  " + amount + "  " + comment + " / " + nextpurchase;
 
-        //Neue Checkbox 
+        // Checkbox hinzugefügt
         let listcheck: HTMLInputElement = document.createElement("input");
         listcheck.type = "checkbox";
         listcheck.name = "Checkbox1";
         listcheck.className = "checkbox1";
         nextelement.appendChild(listcheck);
 
-        //neuer Trash 
+        //Trash hinzugefügt 
         let listtrash: HTMLDivElement = document.createElement("div");
         listtrash.innerHTML = "<i id='trash' class='fa-solid fa-trash-can'></i>";
         nextelement.appendChild(listtrash);
 
-        //neues edit 
+        //Edit Icon hinzugefügt 
         let listedit: HTMLDivElement = document.createElement("div");
         listedit.className = "edit";
         listedit.innerHTML = "<i id ='edit' class='fa-regular fa-pen-to-square'></i>";
@@ -253,11 +253,11 @@ namespace a06_shoppinglist {
         query.set("collection", "data");
         query.set("data", JSON.stringify(json));
 
-        let response: Response = await fetch("https://webuser.hs-furtwangen.de/~khetarpa/Database/index.php?" + query.toString());
+        let response: Response = await fetch("https://webuser.hs-furtwangen.de/~khetarpa/Database/index.php?" + query.toString()); //DBS empfängt 
         console.log("date refreshed");
     }
 
-    //delete funktion
+   // Löschen von dem Eintrag
     async function deletelistelement(nextelement: HTMLDivElement, counter: number): Promise<void> {
 
         nextelement.parentElement.removeChild(nextelement);
@@ -267,12 +267,12 @@ namespace a06_shoppinglist {
         query.set("collection", "data");
         query.set("id", counter.toString());
 
-        let response: Response = await fetch("https://webuser.hs-furtwangen.de/~khetarpa/Database/index.php?" + query.toString());
+        let response: Response = await fetch("https://webuser.hs-furtwangen.de/~khetarpa/Database/index.php?" + query.toString()); // DBS empfängt
         console.log("delete");
 
     }
 
-    //edit funktion
+   //Funktion für das Editieren des  Eintrags
     function editlistelement(nextelement: HTMLDivElement, product: string, amount: number, comment: string, counter: number): void {
         console.log("edit list element");
         let input1: HTMLInputElement = document.querySelector("input#inputproduct");
