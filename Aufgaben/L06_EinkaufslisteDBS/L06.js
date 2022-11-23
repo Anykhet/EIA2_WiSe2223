@@ -5,8 +5,8 @@
  Datum: <19.11.2022>
  Quellen: <Bastian Aberle, Lisa Blindenhöfer, Cindy Nguyen, Pia Giovannelli>
 */
-var a06_shoppinglist;
-(function (a06_shoppinglist) {
+var L06_shoppinglist;
+(function (L06_shoppinglist) {
     window.addEventListener("load", handleload);
     async function handleload() {
         document.querySelector("#add").addEventListener("click", handleaddbutton);
@@ -208,6 +208,6 @@ var a06_shoppinglist;
         input3.value = comment;
         deletelistelement(nextelement, counter);
     }
-})(a06_shoppinglist || (a06_shoppinglist = {}));
+})(L06_shoppinglist || (L06_shoppinglist = {}));
 //funktioniert noch nicht alles zu 100%
 //# sourceMappingURL=L06.js.map
