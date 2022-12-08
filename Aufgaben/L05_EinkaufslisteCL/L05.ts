@@ -41,7 +41,7 @@ namespace shoppinglistA05 {
     //Austausch client
     async function sendData(): Promise<void> {
         let formData: FormData = new FormData(document.forms[0]);
-        let query: URLSearchParams = new URLSearchParams(<any>formData);
+        let query: URLSearchParams = new URLSearchParams(<any>formData); //asynchron senden
         await fetch("L05.html?" + query.toString());
         alert("Data sent");
     }
@@ -129,7 +129,7 @@ namespace shoppinglistA05 {
         itemx.value = item;
         let amountx: HTMLInputElement = document.querySelector("input#amountx");
         amountx.value = amount.toString();
-        let commentx: HTMLInputElement = document.querySelector("input#commentx");
+        let commentx: HTMLInputElement = document.querySelector("input#commentx");  
         commentx.value = comment;
         deleteItem(newDiv);
     }

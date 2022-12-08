@@ -27,7 +27,7 @@ var shoppinglistA05;
     //Austausch client
     async function sendData() {
         let formData = new FormData(document.forms[0]);
-        let query = new URLSearchParams(formData);
+        let query = new URLSearchParams(formData); //asynchron senden
         await fetch("L05.html?" + query.toString());
         alert("Data sent");
     }
