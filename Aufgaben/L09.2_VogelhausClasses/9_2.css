@@ -1,0 +1,12 @@
+body {
+    text-align: center;
+    background-color: rgb(50, 137, 129);
+    color: white;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+canvas {
+    border: solid rgb(31, 61, 61);
+    border-radius: 5px;
+    background-color: white;
+}
