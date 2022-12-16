@@ -19,7 +19,6 @@ var Vogelhaus_obj;
         Vogelhaus_obj.canvas.height = window.innerHeight * 0.85;
         createBackground();
         createClouds();
-        createSnowflakes();
         createSnowman();
         createbirdsitting();
         imageData = Vogelhaus_obj.crc2.getImageData(0, 0, Vogelhaus_obj.canvas.width, Vogelhaus_obj.canvas.height);
@@ -41,9 +40,6 @@ var Vogelhaus_obj;
         clouds.push(new Vogelhaus_obj.Cloud(new Vogelhaus_obj.Vector(Vogelhaus_obj.canvas.width * 2, Vogelhaus_obj.canvas.height * 0.05)));
         clouds.push(new Vogelhaus_obj.Cloud(new Vogelhaus_obj.Vector(Vogelhaus_obj.canvas.width * 0.5, Vogelhaus_obj.canvas.height * 0.08)));
         clouds.push(new Vogelhaus_obj.Cloud(new Vogelhaus_obj.Vector(Vogelhaus_obj.canvas.width * 0.7, Vogelhaus_obj.canvas.height * 0.06)));
-    }
-    function createSnowflakes() {
-        clouds.push(new Vogelhaus_obj.Cloud(new Vogelhaus_obj.Vector(Vogelhaus_obj.canvas.width * 2, Vogelhaus_obj.canvas.height * 0.05)));
     }
     function animate() {
         requestAnimationFrame(animate);

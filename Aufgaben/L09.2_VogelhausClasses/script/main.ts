@@ -32,7 +32,7 @@ namespace Vogelhaus_obj {
 
         createBackground();
         createClouds();
-        createSnowflakes();
+        
         createSnowman();
         createbirdsitting();       
         
@@ -70,11 +70,7 @@ namespace Vogelhaus_obj {
         clouds.push(new Cloud(new Vector(canvas.width * 0.5 , canvas.height * 0.08)));
         clouds.push(new Cloud(new Vector(canvas.width * 0.7 , canvas.height * 0.06)));
     }
-    function createSnowflakes(): void {
-        clouds.push(new Cloud(new Vector(canvas.width * 2, canvas.height * 0.05)));
-       
-    }
-
+    
  
 
 
