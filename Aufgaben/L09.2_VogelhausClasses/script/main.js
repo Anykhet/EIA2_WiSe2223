@@ -15,7 +15,6 @@ var Vogelhaus_obj;
     function fillCanvas(_event) {
         Vogelhaus_obj.canvas = document.querySelector("canvas");
         Vogelhaus_obj.crc2 = Vogelhaus_obj.canvas.getContext("2d");
-        // responsive canvas size
         Vogelhaus_obj.canvas.width = window.innerWidth * 0.95;
         Vogelhaus_obj.canvas.height = window.innerHeight * 0.85;
         createBackground();

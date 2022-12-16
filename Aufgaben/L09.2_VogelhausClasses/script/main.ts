@@ -26,7 +26,7 @@ namespace Vogelhaus_obj {
         canvas = <HTMLCanvasElement>document.querySelector("canvas");
         crc2 = <CanvasRenderingContext2D>canvas.getContext("2d");
 
-        // responsive canvas size
+       
         canvas.width = window.innerWidth * 0.95;
         canvas.height = window.innerHeight * 0.85;
 
