@@ -18,6 +18,12 @@ var Vogelhaus_obj;
             this.x += _addend.x;
             this.y += _addend.y;
         }
+        random(_minLength, _maxLength) {
+            let length = _minLength + Math.random() * (_maxLength - _minLength);
+            let direction = 1;
+            this.set(Math.cos(direction), Math.sin(direction));
+            this.scale(length);
+        }
     }
     Vogelhaus_obj.Vector = Vector;
 })(Vogelhaus_obj || (Vogelhaus_obj = {}));

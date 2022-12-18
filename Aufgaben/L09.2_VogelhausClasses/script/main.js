@@ -8,6 +8,7 @@ Quellen: Pia Giovannelli, Julia Befus, Paula Jordans, Havva Kilic
 var Vogelhaus_obj;
 (function (Vogelhaus_obj) {
     let clouds = [];
+    let snowflakes = [];
     let imageData;
     window.addEventListener("load", fillCanvas);
     window.addEventListener("resize", fillCanvas, false);
@@ -21,8 +22,17 @@ var Vogelhaus_obj;
         createClouds();
         createSnowman();
         createbirdsitting();
+        setInterval(update, 20);
         imageData = Vogelhaus_obj.crc2.getImageData(0, 0, Vogelhaus_obj.canvas.width, Vogelhaus_obj.canvas.height);
         animate();
+    }
+    function update() {
+        console.log("Update");
+        Vogelhaus_obj.crc2.putImageData(imageData, 0, 0);
+        for (let snowflake of snowflakes) {
+            snowflake.moveBy(1 / 50);
+            snowflake.draw();
+        }
     }
     function createBackground() {
         let background = new Vogelhaus_obj.Background;

@@ -13,6 +13,10 @@ namespace Vogelhaus_obj {
     export let canvas: HTMLCanvasElement;
     export let crc2: CanvasRenderingContext2D;
     let clouds: Cloud[] = [];
+    let snowflakes: Snowflake[] = [];
+    
+    
+
    
     
     let imageData: ImageData;
@@ -37,12 +41,23 @@ namespace Vogelhaus_obj {
         createbirdsitting();       
         
         
-    
+        setInterval(update, 20);
 
       
         imageData = crc2.getImageData(0, 0, canvas.width, canvas.height);
 
         animate();
+    }
+
+    function update(): void {
+        console.log("Update");
+        crc2.putImageData(imageData, 0, 0);
+
+        for (let snowflake of snowflakes) {
+            snowflake.moveBy(1 / 50);
+            snowflake.draw();
+        }
+
     }
 
     function createBackground(): void {
