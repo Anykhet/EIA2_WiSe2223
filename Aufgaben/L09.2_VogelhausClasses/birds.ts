@@ -1,10 +1,4 @@
-/*
- Aufgabe:<L09.2, Vogelhaus Classes>
- Name: <Aanya Khetarpal>
- Matrikel: <2711441>
- Datum: <18.12.2022>
- Quellen: <Pia Giovannelli, Julia Befus, Havva Kilic, Paula Jordans>
-*/
+
 
 
 
