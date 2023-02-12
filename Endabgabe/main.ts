@@ -187,10 +187,10 @@ namespace Feuerwerk {
 
         let query: URLSearchParams = new URLSearchParams();
         query.set("command", "insert");
-        query.set("collection", "feuerwerkeee");
+        query.set("collection", "fireworks");
         query.set("data", JSON.stringify(data));
 
-        let response: Response = await fetch("https://webuser.hs-furtwangen.de/~jordansp/Database/index.php?" + query.toString());
+        let response: Response = await fetch("https://webuser.hs-furtwangen.de/~khetarpa/Database/index.php?" + query.toString());
 
         loadFireworkNames();
     }
@@ -202,9 +202,9 @@ namespace Feuerwerk {
     async function loadFireworkNames(): Promise<void> {
         let query: URLSearchParams = new URLSearchParams();
         query.set("command", "find");
-        query.set("collection", "feuerwerkeee");
+        query.set("collection", "fireworks");
 
-        let response: Response = await fetch("https://webuser.hs-furtwangen.de/~jordansp/Database/index.php?" + query.toString());
+        let response: Response = await fetch("https://webuser.hs-furtwangen.de/~khetarpa/Database/index.php?" + query.toString());
         let raw: string = await response.text();
 
         let data: Items = JSON.parse(raw).data;
@@ -243,10 +243,10 @@ namespace Feuerwerk {
     async function loadFirework(): Promise<void> {
         let query: URLSearchParams = new URLSearchParams();
         query.set("command", "find");
-        query.set("collection", "feuerwerkeee");
+        query.set("collection", "fireworks");
         query.set("id", this.getAttribute("itemId"));
 
-        let response: Response = await fetch("https://webuser.hs-furtwangen.de/~jordansp/Database/index.php?" + query.toString());
+        let response: Response = await fetch("https://webuser.hs-furtwangen.de/~khetarpa/Database/index.php?" + query.toString());
         let raw: string = await response.text();
 
         let data: Items = JSON.parse(raw).data;
@@ -278,10 +278,10 @@ namespace Feuerwerk {
     async function deleteFirework(): Promise<void> {
         let query: URLSearchParams = new URLSearchParams();
         query.set("command", "delete");
-        query.set("collection", "feuerwerkeee");
+        query.set("collection", "fireworks");
         query.set("id", this.getAttribute("itemId"));
 
-        let response: Response = await fetch("https://webuser.hs-furtwangen.de/~jordansp/Database/index.php?" + query.toString());
+        let response: Response = await fetch("https://webuser.hs-furtwangen.de/~khetarpa/Database/index.php?" + query.toString());
         let raw: string = await response.text();
 
         loadFireworkNames();
