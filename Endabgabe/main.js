@@ -1,9 +1,9 @@
 /*
- Aufgabe: Feuerwerk
- Name: Paula Jordans
- Matrikel: 271121
- Datum: 09.02.2023
- Quellen: in Zusammenarbeit mit Pia Giovannelli, Aanya Khetarpal, Julia Befus, Havva Kilic
+ Aufgabe: Abschlussarbeit Feuerwerk
+ Name: Aanya Khetarpal
+ Matrikel: 2711441
+ Datum: 12.02.2023
+ Quellen: im Zusammenarbeit mit Pia Giovannelli, Paula Jordans, Julia Befus, Havva Kilic
 */
 var Feuerwerk;
 (function (Feuerwerk) {
