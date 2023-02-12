@@ -1,5 +1,5 @@
 html, body {
-    background-color: rgb(230, 230, 255);
+    background-color: rgb(126, 158, 157);
 }
 
 h1 {
@@ -13,7 +13,6 @@ h1 {
 }
 
 
-
 h5 {
     margin: 0;
     margin-top: 36px;
@@ -25,8 +24,8 @@ button {
     padding: 0 16px;
     background-color: plum;
     border-radius: 8px;
-    border: 1px solid plum;
-    color: #ffffff;
+    border: 1px solid;
+    color: #000000;
     font-size: 13px;
     line-height: 30px;
     font-weight: 400;
@@ -34,8 +33,8 @@ button {
     
 }
 button:hover {
-    background-color: purple;  
-    border-color: purple;
+    background-color: rgb(82, 102, 102);  
+    border-color: rgb(82, 102, 102);
 } 
 
 #name {    
@@ -45,10 +44,6 @@ button:hover {
     border-radius: 4px;
     background-color: #ffffff;    
 }
-
-
-
-
 
 
 #controls {
@@ -69,10 +64,6 @@ button:hover {
     text-align: center;
     background-color: red;
 }
-
-
-
-
 
 
 #savedFireworks {

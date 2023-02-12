@@ -7,12 +7,10 @@ var Feuerwerk;
         counter;
         crc2;
         color;
-        flightDuration;
         numberOfParticles;
         position;
         speed;
         constructor(config, particleConfig) {
-            this.counter = 0;
             let canvas = document.querySelector("canvas");
             this.crc2 = canvas.getContext("2d");
             this.color = config.color;
@@ -23,22 +21,15 @@ var Feuerwerk;
             this.createdParticles = false;
             this.particles = [];
             if (this.color == "#000000") {
-                this.color = "#" + Math.floor(Math.random() * 8000000 + 8000000).toString(16);
+                this.color = "#fff";
             }
         }
         draw() {
-            this.drawExplosion();
-        }
-        update() {
-            this.updateParticles();
-            this.counter++;
-        }
-        drawExplosion() {
             for (let particle of this.particles) {
                 particle.draw();
             }
         }
-        updateParticles() {
+        update() {
             if (!this.createdParticles) {
                 for (let i = 0; i < this.numberOfParticles; i++) {
                     let startVelocity = new Feuerwerk.Vector(Math.random() * this.particleConfig.width - this.particleConfig.width / 2, Math.random() * 35 - 10);

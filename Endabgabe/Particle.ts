@@ -1,6 +1,5 @@
 namespace Feuerwerk {
 
-   
     export interface ParticleConfig {
         color: string;
         size: number;
@@ -15,7 +14,6 @@ namespace Feuerwerk {
         crc2: CanvasRenderingContext2D;
         color: string;
 
-       
         downForce: number;
         size: number;
 
@@ -27,19 +25,18 @@ namespace Feuerwerk {
             this.size = config.size;
             this.alive = true;
 
-           
             if (this.color == "#000000") {
                 this.color = "#" + Math.floor(Math.random() * 8000000 + 8000000).toString(16);
             }
 
-          
+
             let canvas: HTMLCanvasElement | null = document.querySelector("canvas");
             this.crc2 = <CanvasRenderingContext2D>canvas.getContext("2d");
         }
 
         update(): void {
             this.position.add(this.velocity);
-            this.lifetime -= 1
+            this.lifetime -= 1;
             if (this.lifetime <= 0) this.alive = false; 
         }
 

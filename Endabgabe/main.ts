@@ -10,12 +10,11 @@ namespace Feuerwerk {
 
     window.addEventListener("load", handleload);
 
-    let canvas: HTMLCanvasElement
+    let canvas: HTMLCanvasElement;
     let crc2: CanvasRenderingContext2D;
     let fireworks: Firework[] = [];
-    let rect: DOMRect
+    let rect: DOMRect;
 
-    
     let name: string = "Mein Feuerwerk";
 
     let color: string = "#ff0000";
@@ -28,10 +27,6 @@ namespace Feuerwerk {
     let size: number = 1;
     let width: number = 10;
 
-
-
-
-    
     let nameInput: HTMLInputElement = document.getElementById("name") as HTMLInputElement;
 
     let redInput: HTMLInputElement = document.getElementById("red") as HTMLInputElement;
@@ -45,9 +40,6 @@ namespace Feuerwerk {
     let widthInput: HTMLInputElement = document.getElementById("width") as HTMLInputElement;
 
 
-
-
-  
     nameInput.addEventListener("change", changeName);
 
     redInput.addEventListener("change", changeRed);
@@ -60,9 +52,6 @@ namespace Feuerwerk {
     widthInput.addEventListener("change", changeWidth);
 
 
-
-    
-    
     function changeName(): void {
         name = nameInput.value;
     }
@@ -105,15 +94,6 @@ namespace Feuerwerk {
     }
 
 
-
-
-
-
-
-
-
-    
-    
     function handleload(): void {
         canvas = document.querySelector("canvas");
         rect = canvas.getBoundingClientRect();
@@ -123,25 +103,22 @@ namespace Feuerwerk {
         }
         canvas.addEventListener("click", handleClick);
 
-     
         document.getElementById("save").addEventListener("click", saveFirework);
 
         crc2 = <CanvasRenderingContext2D>canvas.getContext("2d");
 
 
-       
         loadFireworkNames();
 
-        
         setInterval(update, 20);
     }
-  
+
     function handleClick(e: MouseEvent): void {
         let fireworkConfig: FireworkConfig = {
             color: color,
             numberOfParticles: numberOfParticles,
-            positionX: e.clientX-rect.left,
-            positionY: e.clientY- rect.top,
+            positionX: e.clientX - rect.left,
+            positionY: e.clientY - rect.top,
             speed: speed
         };
 
@@ -155,7 +132,7 @@ namespace Feuerwerk {
     }
 
 
-    
+
     function drawBackground(): void {
         let gradient: CanvasGradient = crc2.createLinearGradient(0, 0, 0, crc2.canvas.height);
         gradient.addColorStop(0, "#05050555"); 
@@ -170,23 +147,18 @@ namespace Feuerwerk {
         drawBackground();
 
         for (let i: number = fireworks.length - 1; i >= 0; i--) {
-            
+         
             if (fireworks[i].createdParticles && fireworks[i].particles.length == 0) {
                 fireworks.splice(i, 1);
                 continue;
             }
             
-         
             fireworks[i].draw();
             fireworks[i].update();
         }
 
     }
 
-
-
-
-    
     interface SaveConfig {
         name: string;
         color: string;
@@ -215,12 +187,11 @@ namespace Feuerwerk {
 
         let query: URLSearchParams = new URLSearchParams();
         query.set("command", "insert");
-        query.set("collection", "fireworks");
+        query.set("collection", "feuerwerkeee");
         query.set("data", JSON.stringify(data));
 
-        let response: Response = await fetch("https://webuser.hs-furtwangen.de/~khetarpa/Database/index.php?" + query.toString());
+        let response: Response = await fetch("https://webuser.hs-furtwangen.de/~jordansp/Database/index.php?" + query.toString());
 
-       
         loadFireworkNames();
     }
 
@@ -228,35 +199,34 @@ namespace Feuerwerk {
         [category: string]: SaveConfig;
     }
 
-
-    
     async function loadFireworkNames(): Promise<void> {
         let query: URLSearchParams = new URLSearchParams();
         query.set("command", "find");
-        query.set("collection", "fireworks");
+        query.set("collection", "feuerwerkeee");
 
-        let response: Response = await fetch("https://webuser.hs-furtwangen.de/~khetarpa/Database/index.php?" + query.toString());
+        let response: Response = await fetch("https://webuser.hs-furtwangen.de/~jordansp/Database/index.php?" + query.toString());
         let raw: string = await response.text();
 
         let data: Items = JSON.parse(raw).data;
 
-  
         let availables: HTMLElement = document.getElementById("available");
 
+        while (availables.childElementCount > 1) {
+            availables.removeChild(availables.lastChild);
+        }
 
-        
+
         for (let key in data) {
-            
+
             let newElement: HTMLElement = availables.firstElementChild.cloneNode(true) as HTMLElement;
             
-           
             newElement.firstChild.textContent = data[key].name;
-       
+
             newElement.style.display = "";
-          
+   
             newElement.style.borderBottom = "1px solid black";
 
-           
+
             newElement.querySelector(".load").setAttribute("itemId", key);
             newElement.querySelector(".delete").setAttribute("itemId", key);
 
@@ -264,20 +234,19 @@ namespace Feuerwerk {
             newElement.querySelector(".load").addEventListener("click", loadFirework);
             newElement.querySelector(".delete").addEventListener("click", deleteFirework);
 
-        
+
             availables.appendChild(newElement);
         }
     }
 
 
-   
     async function loadFirework(): Promise<void> {
         let query: URLSearchParams = new URLSearchParams();
         query.set("command", "find");
-        query.set("collection", "fireworks");
+        query.set("collection", "feuerwerkeee");
         query.set("id", this.getAttribute("itemId"));
 
-        let response: Response = await fetch("https://webuser.hs-furtwangen.de/~khetarpa/Database/index.php?" + query.toString());
+        let response: Response = await fetch("https://webuser.hs-furtwangen.de/~jordansp/Database/index.php?" + query.toString());
         let raw: string = await response.text();
 
         let data: Items = JSON.parse(raw).data;
@@ -293,7 +262,6 @@ namespace Feuerwerk {
         size = loadedConfig.size;
         width = loadedConfig.width;
 
-        
         nameInput.value = loadedConfig.name;
         redInput.value = loadedConfig.red.toString();
         greenInput.value = loadedConfig.green.toString();
@@ -303,7 +271,6 @@ namespace Feuerwerk {
         sizeInput.value = loadedConfig.size.toString();
         widthInput.value = loadedConfig.width.toString();
 
-       
         updateColor();
     }
 
@@ -311,13 +278,12 @@ namespace Feuerwerk {
     async function deleteFirework(): Promise<void> {
         let query: URLSearchParams = new URLSearchParams();
         query.set("command", "delete");
-        query.set("collection", "fireworks");
+        query.set("collection", "feuerwerkeee");
         query.set("id", this.getAttribute("itemId"));
 
-        let response: Response = await fetch("https://webuser.hs-furtwangen.de/~khetarpa/Database/index.php?" + query.toString());
+        let response: Response = await fetch("https://webuser.hs-furtwangen.de/~jordansp/Database/index.php?" + query.toString());
         let raw: string = await response.text();
 
-     
         loadFireworkNames();
     }
 }

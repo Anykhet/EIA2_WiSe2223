@@ -1,9 +1,9 @@
 /*
- Aufgabe: Abschlussarbeit Feuerwerk
- Name: Aanya Khetarpal
- Matrikel: 2711441
- Datum: 12.02.2023
- Quellen: im Zusammenarbeit mit Pia Giovannelli, Paula Jordans, Julia Befus, Havva Kilic
+ Aufgabe: Feuerwerk
+ Name: Paula Jordans
+ Matrikel: 271121
+ Datum: 09.02.2023
+ Quellen: in Zusammenarbeit mit Pia Giovannelli, Aanya Khetarpal, Julia Befus, Havva Kilic
 */
 var Feuerwerk;
 (function (Feuerwerk) {
@@ -138,19 +138,22 @@ var Feuerwerk;
         };
         let query = new URLSearchParams();
         query.set("command", "insert");
-        query.set("collection", "fireworks");
+        query.set("collection", "feuerwerkeee");
         query.set("data", JSON.stringify(data));
-        let response = await fetch("https://webuser.hs-furtwangen.de/~khetarpa/Database/index.php?" + query.toString());
+        let response = await fetch("https://webuser.hs-furtwangen.de/~jordansp/Database/index.php?" + query.toString());
         loadFireworkNames();
     }
     async function loadFireworkNames() {
         let query = new URLSearchParams();
         query.set("command", "find");
-        query.set("collection", "fireworks");
-        let response = await fetch("https://webuser.hs-furtwangen.de/~khetarpa/Database/index.php?" + query.toString());
+        query.set("collection", "feuerwerkeee");
+        let response = await fetch("https://webuser.hs-furtwangen.de/~jordansp/Database/index.php?" + query.toString());
         let raw = await response.text();
         let data = JSON.parse(raw).data;
         let availables = document.getElementById("available");
+        while (availables.childElementCount > 1) {
+            availables.removeChild(availables.lastChild);
+        }
         for (let key in data) {
             let newElement = availables.firstElementChild.cloneNode(true);
             newElement.firstChild.textContent = data[key].name;
@@ -166,9 +169,9 @@ var Feuerwerk;
     async function loadFirework() {
         let query = new URLSearchParams();
         query.set("command", "find");
-        query.set("collection", "fireworks");
+        query.set("collection", "feuerwerkeee");
         query.set("id", this.getAttribute("itemId"));
-        let response = await fetch("https://webuser.hs-furtwangen.de/~khetarpa/Database/index.php?" + query.toString());
+        let response = await fetch("https://webuser.hs-furtwangen.de/~jordansp/Database/index.php?" + query.toString());
         let raw = await response.text();
         let data = JSON.parse(raw).data;
         let loadedConfig = data[this.getAttribute("itemId")];
@@ -194,9 +197,9 @@ var Feuerwerk;
     async function deleteFirework() {
         let query = new URLSearchParams();
         query.set("command", "delete");
-        query.set("collection", "fireworks");
+        query.set("collection", "feuerwerkeee");
         query.set("id", this.getAttribute("itemId"));
-        let response = await fetch("https://webuser.hs-furtwangen.de/~khetarpa/Database/index.php?" + query.toString());
+        let response = await fetch("https://webuser.hs-furtwangen.de/~jordansp/Database/index.php?" + query.toString());
         let raw = await response.text();
         loadFireworkNames();
     }
